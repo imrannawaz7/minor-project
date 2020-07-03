@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" >
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Sign in</title>
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Sign in</p>
+    <form action = "{% url 'signinb' %}" class="form1">
+      <input type="email" name="emailid" class="un" align="center" placeholder="Email">
+      <input type="password" name="pass" class="un" align="center" id="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password">
+      <button type="submit" class="sub" align="center">Submit</button>
+      <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+      <div>
+        <p class="forgot" align="center">Don't have a an acoount?  <a href="#" style="color:magenta">Sign Up</p>
+      </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

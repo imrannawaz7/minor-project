@@ -1,11 +1,15 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.http import HttpResponse
 # Create your views here.
 
 from .models import UsersAPI
 from .serializers import UsersAPI
 from .serializers import UserApiSerializer
 from django.shortcuts import get_object_or_404
+
+def home(request):
+    return HttpResponse('Hello welcome to my minor project! And to check it out, Try- /display, /admin, /api2/login')
 
 class UserApiView(APIView):
     def get(self, request):
@@ -41,11 +45,8 @@ class UserApiView(APIView):
             save_data = serializer.save()
         return Response({"Success": "User '{}' updated successfully".format(save_data.name)})
 
-
-    def delete(self, request):
-        pass
-
-    def put(self, request):
-        pass
-
+    def delete(self, request, pk):
+        queryset =  get_object_or_404(UsersAPI.objects.all(), pk=pk)
+        queryset.delete()
+        return Response({"Success": "User  with id '{}' deleted successfully".format(pk)})
 
