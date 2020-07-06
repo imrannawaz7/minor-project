@@ -27,7 +27,7 @@ SECRET_KEY = '!4juo1!7-zjeh7_&(san+@p@nq_)_erk@tzc$g$yi*d5+vt%-2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'minorproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'minor',
-        'USER': 'postgres',
-        'PASSWORD': 'Valesic4658!',
-        'HOST': '127.0.0.1',
+        'NAME': 'shawarma',
+        'USER': 'imran',
+        'PASSWORD':'lambshawarma',
+        'HOST': 'localhost',
         'PORT': '5432',
 
     }
@@ -137,20 +137,3 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-    {
-    'NAME': 'dbTest.passwordValidators.ComplexPasswordValidator',
-    },
-]

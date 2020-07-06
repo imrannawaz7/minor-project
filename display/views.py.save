@@ -18,7 +18,7 @@ def submitUser(request):
 
     print(email,password,name,"this is me")
 
-    url = "http://localhost:6269/applogin/"
+    url = "lo"
 
     payload = {"email":email, "password":password, "name":name}
     payload = json.dumps(payload)
@@ -39,7 +39,7 @@ def getUser(request):
 
     print(email,password,"this is me")
 
-    url = "http://localhost:6269/applogin/"
+    url = "http://127.0.0.1:8000/applogin/"
 
     payload = {"email":email, "password":password}
     payload = json.dumps(payload)
